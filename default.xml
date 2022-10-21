@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="aosp"
+    fetch="https://android.googlesource.com/" />
+  <default revision="refs/tags/android-wear-11.0.0_r0.3"
+    remote="aosp" sync-j="4" />
+  <superproject name="kernel/superproject" remote="aosp" revision="android-wear-11.0.0_r0.3" />
+  <project path="kernel/exynos" name="kernel/exynos"/>
+  <project path="kernel/exynos-modules/config" name="kernel/exynos-modules/config">
+    <linkfile dest="build.config" src="build.config"/>
+    <linkfile dest="kernel/exynos/arch/arm64/configs/r11_defconfig" src="r11_defconfig"/>
+    <linkfile dest="kernel/exynos/arch/arm64/boot/dts/dtboimg.cfg" src="dtboimg.cfg"/>
+  </project>
+  <project path="kernel/exynos-modules/drivers" name="kernel/exynos-modules/drivers"/>
+  <project path="kernel/exynos-modules/devicetree" name="kernel/exynos-modules/devicetree">
+    <linkfile dest="kernel/exynos/arch/arm64/boot/dts/exynos/exynos9110" src="."/>
+    <linkfile dest="kernel/exynos/arch/arm64/boot/dts/exynos/r11.dts" src="r11.dts"/>
+  </project>
+  <project path="build" name="kernel/build" remote="aosp" groups="partner"/>
+  <project path="prebuilts-master/clang/host/darwin-universal" name="platform/prebuilts/clang/host/darwin-universal" clone-depth="1" groups="partner"/>
+  <project path="prebuilts-master/misc" name="platform/prebuilts/misc"  clone-depth="1" groups="partner"/>
+  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" clone-depth="1" remote="aosp" groups="partner"/>
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" remote="aosp" groups="partner"/>
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" groups="partner"/>
+</manifest>
