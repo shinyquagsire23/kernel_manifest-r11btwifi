@@ -17,7 +17,7 @@
     <linkfile dest="private/exynos-google-cw/arch/arm64/boot/dts/exynos/r11.dts" src="r11.dts"/>
   </project>
   <project path="build" name="kernel/build" remote="aosp" groups="partner"/>
-  <project path="prebuilts-master/clang/host/darwin-universal" name="platform/prebuilts/clang/host/darwin-universal" clone-depth="1" groups="partner" revision="592f071af1df99cb463ff5b670cd383efd49a6e1" />
+  <project path="prebuilts-master/clang/host/darwin-x86" name="platform/prebuilts/clang/host/darwin-x86" clone-depth="1" groups="partner" revision="refs/heads/android-s-beta-4" />
   <project path="prebuilts-master/misc" name="platform/prebuilts/misc"  clone-depth="1" groups="partner"/>
   <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" clone-depth="1" remote="aosp" groups="partner"/>
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" remote="aosp" groups="partner"/>
